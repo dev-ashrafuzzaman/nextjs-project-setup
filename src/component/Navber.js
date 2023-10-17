@@ -15,6 +15,10 @@ const navLinks = [
         title: 'News'
     },
     {
+        path: '/about',
+        title: 'About'
+    },
+    {
         path: '/dashboard',
         title: 'Dashboard'
     },
@@ -27,7 +31,7 @@ const Navber = () => {
            <ul className='flex justify-center items-center'>
             {
                 navLinks.map(({path , title} , index) => <li className='mr-4' key={index}>
-                    <NavLink href={path}>{title}</NavLink>
+                    <NavLink exact={path === "/"} activeClassName="text-2xl" href={path}>{title}</NavLink>
                 </li>)
             }
            </ul>
